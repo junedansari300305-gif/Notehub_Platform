@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Last Year Question Papers - NoteHub</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #3498db;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    select, .year-buttons button {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .year-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .paper-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .paper-card {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .paper-card h4 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      color: #2c3e50;
+    }
+
+    .paper-card a {
+      text-decoration: none;
+      color: white;
+      background-color: #2ecc71;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: bold;
+      margin-top: auto;
+    }
+
+    .paper-card a:hover {
+      background-color: #27ae60;
+    }
+  </style>
+</head>
+<body>
+
+<header>📚 Last 5 Year Question Papers</header>
+
+<div class="container">
+  <div class="filters">
+    <select id="courseSelect">
+      <option value="all">All Courses</option>
+      <option value="B.Sc CS">B.Sc Computer Science</option>
+      <option value="B.Sc IT">B.Sc IT</option>
+      <option value="BBA">BBA</option>
+      <option value="BMS">BMS</option>
+      <option value="BA">BA</option>
+      <option value="B.Com">B.Com</option>
+      <option value="BAF">BAF</option>
+      <option value="BMM">BMM</option>
+      <option value="BBA IB">BBA IB</option>
+      <option value="BBA FM">BBA FM</option>
+    </select>
+
+    <div class="year-buttons">
+      <button onclick="filterYear('all')">All Years</button>
+      <button onclick="filterYear(2024)">2024</button>
+      <button onclick="filterYear(2023)">2023</button>
+      <button onclick="filterYear(2022)">2022</button>
+      <button onclick="filterYear(2021)">2021</button>
+      <button onclick="filterYear(2020)">2020</button>
+    </div>
+  </div>
+
+  <div class="paper-grid" id="paperGrid">
+    <!-- Papers will be added here by JS -->
+  </div>
+</div>
+
+<script>
+  const papers = [
+    { course: 'B.Sc CS', year: 2024, file: 'dummy-pdfs/B.Sc CS/2024.pdf' },
+    { course: 'B.Sc CS', year: 2023, file: 'dummy-pdfs/B.Sc CS/2023.pdf' },
+    { course: 'B.Com', year: 2022, file: 'dummy-pdfs/B.Com/2022.pdf' },
+    { course: 'BBA', year: 2024, file: 'dummy-pdfs/BBA/2024.pdf' },
+    { course: 'BA', year: 2023, file: 'dummy-pdfs/BA/2023.pdf' },
+    { course: 'BBA IB', year: 2021, file: 'dummy-pdfs/BBA IB/2021.pdf' },
+    { course: 'BMS', year: 2020, file: 'dummy-pdfs/BMS/2020.pdf' },
+    { course: 'BMM', year: 2023, file: 'dummy-pdfs/BMM/2023.pdf' },
+    { course: 'BAF', year: 2024, file: 'dummy-pdfs/BAF/2024.pdf' },
+    { course: 'B.Sc IT', year: 2022, file: 'dummy-pdfs/B.Sc IT/2022.pdf' },
+    // Add more as needed
+  ];
+
+  let selectedCourse = "all";
+  let selectedYear = "all";
+
+  const paperGrid = document.getElementById("paperGrid");
+
+  function displayPapers() {
+    paperGrid.innerHTML = '';
+    const filtered = papers.filter(p => 
+      (selectedCourse === 'all' || p.course === selectedCourse) &&
+      (selectedYear === 'all' || p.year == selectedYear)
+    );
+
+    if (filtered.length === 0) {
+      paperGrid.innerHTML = "<p>No papers found.</p>";
+      return;
+    }
+
+    filtered.forEach(paper => {
+      const card = document.createElement('div');
+      card.className = 'paper-card';
+      card.innerHTML = `
+        <h4>${paper.course} - ${paper.year}</h4>
+        <a href="${paper.file}" target="_blank">📄 View / Download</a>
+      `;
+      paperGrid.appendChild(card);
+    });
+  }
+
+  function filterYear(year) {
+    selectedYear = year;
+    displayPapers();
+  }
+
+  document.getElementById("courseSelect").addEventListener("change", (e) => {
+    selectedCourse = e.target.value;
+    displayPapers();
+  });
+
+  // Initial display
+  displayPapers();
+</script>
+
+</body>
+</html>

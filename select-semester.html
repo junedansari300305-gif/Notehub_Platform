@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Select Semester | NoteHub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #2196f3;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+
+    .title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .sem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+    }
+
+    .sem-btn {
+      padding: 20px;
+      background-color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #333;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .sem-btn:hover {
+      background-color: #dbeeff;
+      transform: translateY(-3px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #eee;
+      color: #555;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>NoteHub</header>
+
+  <div class="container">
+    <div class="title">📘 Select Your Semester</div>
+    <div class="sem-grid">
+      <button class="sem-btn" onclick="goToNotes(1)">Semester 1</button>
+      <button class="sem-btn" onclick="goToNotes(2)">Semester 2</button>
+      <button class="sem-btn" onclick="goToNotes(3)">Semester 3</button>
+      <button class="sem-btn" onclick="goToNotes(4)">Semester 4</button>
+      <button class="sem-btn" onclick="goToNotes(5)">Semester 5</button>
+      <button class="sem-btn" onclick="goToNotes(6)">Semester 6</button>
+    </div>
+  </div>
+
+  <footer>© 2025 NoteHub | Built for Degree Students</footer>
+
+  <script>
+    function goToNotes(sem) {
+      alert("Selected Semester: " + sem);
+      window.location.href = "notes.html"; // This will be the final notes page
+    }
+  </script>
+
+</body>
+</html>

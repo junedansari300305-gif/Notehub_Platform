@@ -1,0 +1,59 @@
+🗂️ Folder: backend/
+This is your Flask backend. It connects the frontend with the database, handles requests, returns notes, uploads, etc.
+
+📁 1. app.py → Main backend server
+🔧 Starts the Flask app
+
+🔗 Registers all the routes (like /api/notes, /api/upload, etc.)
+
+🌍 Frontend sends HTTP requests to this app running on http://localhost:5000
+
+📁 2. db_config.py → Database setup
+🔌 Creates and connects to the SQLite database (notehub.db)
+
+⚙️ Contains init_db() to initialize all the tables
+
+🧠 Used by models to interact with the DB
+
+📁 3. models/ → Database models
+Contains files that define how your database tables look and behave.
+
+✅ __init__.py: Imports all models in this folder
+
+📄 notes.py: Defines Note class (how a note is stored in DB)
+
+📄 colleges.py: Defines College class
+
+📄 upload.py: Defines upload behavior (if applicable)
+
+These models are used in route files to insert, fetch, or filter data.
+
+📁 4. routes/ → API endpoints
+This folder contains code that handles different types of HTTP requests like fetching notes, uploading files, getting college info, etc.
+
+✅ __init__.py: Groups and exports all routes
+
+📄 notes.py:
+
+/api/notes – GET all notes
+
+/api/notes/subject?subject=Maths – Get notes by subject
+
+📄 upload.py:
+
+/api/upload – Upload new notes (PDF, info)
+
+📄 colleges.py:
+
+/api/colleges – Get list of colleges
+
+/api/colleges/1/semesters – Get semesters for college 1
+
+/api/colleges/1/courses – Get courses
+
+These endpoints are accessed from the frontend using fetch().
+
+📁 5. notehub.db → Database file
+🧠 Your data is stored here: notes, colleges, uploads, etc.
+
+It's generated automatically when you run init_db()

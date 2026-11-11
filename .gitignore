@@ -1,0 +1,49 @@
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+.venv/
+backend/venv/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Flask
+instance/
+.webassets-cache/
+
+# Uploads - ignore uploaded user files
+uploads/*
+!uploads/.gitkeep
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node.js (if used)
+node_modules/
+
+File/

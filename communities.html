@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NoteHub | Communities</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f6f9fc;
+    }
+
+    header {
+      background-color: #3498db;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .filters {
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .filters select {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .thread {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .thread h3 {
+      margin: 0 0 0.5rem 0;
+    }
+
+    .thread .meta {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .thread p {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .comments {
+      padding-left: 1rem;
+      border-left: 3px solid #ddd;
+    }
+
+    .comment {
+      font-size: 0.95rem;
+      color: #444;
+      margin-bottom: 0.5rem;
+    }
+
+    /* --- Telegram Section --- */
+    .telegram-section {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 2rem;
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    .telegram-section h2 {
+      color: #2c3e50;
+      margin-bottom: 0.8rem;
+      font-size: 1.6rem;
+    }
+
+    .telegram-section p {
+      color: #555;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .telegram-section img {
+      width: 200px;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .telegram-section img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    NoteHub Communities
+  </header>
+
+  <div class="container">
+
+    <div class="filters">
+      <select>
+        <option disabled selected>Select Course</option>
+        <option>B.Sc CS</option>
+        <option>B.Sc IT</option>
+        <option>BBA</option>
+        <option>BAF</option>
+      </select>
+      <select>
+        <option disabled selected>Select Semester</option>
+        <option>Sem 1</option>
+        <option>Sem 2</option>
+        <option>Sem 3</option>
+        <option>Sem 4</option>
+        <option>Sem 5</option>
+        <option>Sem 6</option>
+      </select>
+    </div>
+
+    <div class="thread">
+      <h3>How to prepare for DBMS Sem 3?</h3>
+      <div class="meta">Posted by Riya | B.Sc CS | Sem 3</div>
+      <p>Can someone share how they prepared for DBMS theory and practical? Any tips or notes links would help.</p>
+      <div class="comments">
+        <div class="comment">Aman: You can check GFG and YouTube channel “KnowledgeGate” — very helpful!</div>
+        <div class="comment">Sneha: I used previous year notes from NoteHub + solved PYQs.</div>
+      </div>
+    </div>
+
+    <div class="thread">
+      <h3>Best YouTube Channels for BBA?</h3>
+      <div class="meta">Posted by Arjun | BBA | Sem 1</div>
+      <p>Hi guys, I just started BBA and was wondering what channels or playlists helped you in subjects like Business Studies and Economics?</p>
+      <div class="comments">
+        <div class="comment">Komal: Check "Study with Sudhir" and "Unacademy BBA" – both have free crash courses.</div>
+      </div>
+    </div>
+
+    <!-- Telegram Section -->
+    <div class="telegram-section">
+      <h2>Join Our Official Telegram Channel 📱</h2>
+      <p>
+        Stay updated with the latest study materials, university circulars, and important announcements from
+        <strong>Mumbai University</strong>.  
+        Join our official Telegram community to access exclusive notes, question papers, and real-time updates.
+      </p>
+      <img src="Telegram.jpg" alt="Join our Telegram Channel QR Code">
+      <p><em>Scan the QR code above or search <strong>@NoteHub_MU</strong> on Telegram to join instantly!</em></p>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2025 NoteHub | Learn Together, Grow Together.
+  </footer>
+</body>
+</html>

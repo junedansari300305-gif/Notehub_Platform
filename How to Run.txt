@@ -1,0 +1,14 @@
+Backend   :-
+
+
+cd C:\Users\Nazish\Desktop\NoteHub\backend
+venv\Scripts\activate
+python app.py
+
+
+
+
+Frontend   :-
+
+cd C:\Users\Nazish\Desktop\NoteHub
+python -m http.server 3000
